@@ -1,0 +1,45 @@
+<html>
+<body>
+<div id="all">
+<div id="getDate">
+  <vuejs-datepicker v-model="StartDate" :value="this.default" :format="DatePickerFormat" ></vuejs-datepicker>
+    <vuejs-datepicker v-model="EndDate" :format="DatePickerFormat"></vuejs-datepicker>
+<p>
+  {{ DateFormat(StartDate) }}
+  {{ DateFormat(EndDate) }}
+</p>
+<p>{{ PeriodCalc() }}</p>
+</div>
+<div id="calendar">
+  {{ Year }}
+  {{ Month }}
+  {{ Day }}
+  <hr>
+  <table border="1" id="headtable">
+    <thead>
+      <tr>
+        <td id="headyear" v-for="year in Year">{{ year }}</td>
+      </tr>
+      <tr>
+        <td id="headmonth" v-for="month in Month">{{ month }}</td>
+      </tr>
+      <tr>
+        <td id="headday" v-for="day in Day">{{ day }}</td>
+      </tr>
+    </thead>
+  </table>
+</div>
+<style>
+body{
+  width:500px;
+  height:400px;
+  background-color: lightblue;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/ja.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vuejs-datepicker"></script>
+</div>
+</body>
+</html>
